@@ -14,7 +14,7 @@ filetype indent on
 
 let g:solarized_termcolors=256
 set background=light
-:colorscheme pablo
+:colorscheme industry
 
 set number 
 set relativenumber 
@@ -28,12 +28,14 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set backspace=indent,eol,start
 
 set completeopt-=preview
+set hlsearch
 
 " vim-go options
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_snippet_case_type = "camelcase"
 
 " let NERDTreeQuitOnOpen = 1 
 " autocmd VimEnter * NERDTree
@@ -46,6 +48,7 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_auto_trigger = 1
 
 :map! <c-l> <Right>
+:map <C-a> :GoDecls<CR>
 
 function! NumberToggle()
     if(&nu == 1)
