@@ -11,10 +11,20 @@ syntax on
 filetype plugin on
 filetype indent on
 
-
 let g:solarized_termcolors=256
+syntax enable
 set background=light
-:colorscheme industry
+colorscheme solarized  
+
+hi Normal     ctermbg=255
+hi String      ctermfg=28
+hi Function    ctermfg=208
+hi Statement     ctermfg=27
+hi Boolean     ctermfg=163
+hi Comment     ctermfg=39
+hi Statement     ctermfg=27
+hi Type     ctermfg=18 cterm=bold
+
 
 set number 
 set relativenumber 
@@ -29,6 +39,8 @@ set backspace=indent,eol,start
 
 set completeopt-=preview
 set hlsearch
+
+noremap <C-c> :CtrlP /home/tsasa/Go/src/<CR>
 
 " vim-go options
 let g:go_fmt_command = "goimports"
@@ -49,6 +61,10 @@ let g:ycm_auto_trigger = 1
 
 :map! <c-l> <Right>
 :map <C-a> :GoDecls<CR>
+:map <C-i> :noh<CR>
+:nmap <S-Enter> O<Esc>
+:nmap <CR> o<Esc>
+:map <c-s> :w<CR>
 
 function! NumberToggle()
     if(&nu == 1)
